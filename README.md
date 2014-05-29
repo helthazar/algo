@@ -1,5 +1,7 @@
 Algo
 ====
 
-== Data Structures
+Data Structures
+==
 * Union-find
+* Interval tree

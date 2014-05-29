@@ -36,8 +36,8 @@ Tree create(long long minval, long long maxval,
 Tree combine(Tree a, Tree b) {
     Tree result;
     //--------------------------------- MIN / MAX
-    result.maxa = max(a.maxa + a.add, b.maxa + b.add);
-    result.mina = min(a.mina + a.add, b.mina + b.add);
+    result.maxa = max(a.maxa, b.maxa);
+    result.mina = min(a.mina, b.mina);
     //--------------------------------- COLOR / SUM
     result.sum = a.sum + b.sum;
     result.color = ZERO;
@@ -47,21 +47,29 @@ Tree combine(Tree a, Tree b) {
     return result;
 }
 
+void change(int v, int l, int r, int val) {
+    //--------------------------------- ADD
+    tree[v].add += val;
+    //--------------------------------- COLOR / SUM
+    tree[v].sum += val * (r - l + 1);
+    //--------------------------------- MIN / MAX
+    tree[v].maxa += val;
+    tree[v].mina += val;
+    //---------------------------------
+}
+
 void push(int v, int tl, int tm, int tr) {
     //--------------------------------- ADD
-    tree[v * 2 + 1].add += tree[v].add;
-    tree[v * 2 + 2].add += tree[v].add;
+    change(v * 2 + 1, tl, tm, tree[v].add);
+    change(v * 2 + 2, tm + 1, tr, tree[v].add);
     tree[v].add = 0;
     //--------------------------------- COLOR / SUM
     if (tree[v].color != ZERO) {
-        tree[v * 2 + 1].sum = tree[v].color * (tm - tl + 1);
-        tree[v * 2 + 2].sum = tree[v].color * (tr - tm);
-        tree[v * 2 + 1].color = tree[v * 2 + 2].color = tree[v].color;
-        //--------------------------------- MIN / MAX
-        tree[v * 2 + 1].mina = tree[v * 2 + 2].mina = tree[v * 2 + 1].maxa = tree[v * 2 + 2].mina = tree[v].color;
-        //---------------------------------
+        tree[v * 2 + 1] = create(tree[v].color, tree[v].color, tree[v].color, tree[v].color * (tm - tl + 1));
+        tree[v * 2 + 2] = create(tree[v].color, tree[v].color, tree[v].color, tree[v].color * (tr - tm));
         tree[v].color = ZERO;
     }
+    //---------------------------------
 }
 
 void build(int v, int tl, int tr) {
@@ -93,7 +101,7 @@ void update(int v, int tl, int tr, int l, int r, long long val){
 
 void add(int v, int tl, int tr, int l, int r, long long val){
     if (l == tl && r == tr) {
-        tree[v].add += val;
+        change(v, l, r, val);
     }
     else{
         int tm = (tl + tr) >> 1;

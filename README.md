@@ -6,4 +6,9 @@ Data Structures
 * Union-find
 * Interval tree
 * Fenwick tree
-* Treap
+* Treap TODO understand
+
+Max pair matching / Assignment task
+==
+* Kuhn's algo TODO understand
+* Hungary algorithm

@@ -18,10 +18,10 @@ void unite(int a, int b, int new_ancestor) {
 void dfs(int v) {
 	id[v] = v,  ancestor[v] = v;
 	used[v] = true;
-	for (int i = 0; i < g[v].size(); i++)
-		if (!u[g[v][i]]) {
-			dfs(g[v][i]);
-			unite(v, g[v][i], v);
+	for (int i = 0; i < edges[v].size(); i++)
+		if (!u[edges[v][i]]) {
+			dfs(edges[v][i]);
+			unite(v, edges[v][i], v);
 		}
 	for (int i = 0; i < q[v].size(); i++)
 		if (u[q[v][i]]) {

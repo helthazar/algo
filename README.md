@@ -11,6 +11,7 @@ Data Structures
 Max pair matching / Assignment task
 ==
 * Kuhn's algo TODO understand
+* Hungarian algo TODO understand
 
 LCA
 == 

@@ -16,3 +16,7 @@ Max pair matching / Assignment task
 LCA
 == 
 * Tarjan's algo
+
+Game Theory
+==
+* Sprague-Grundy theory

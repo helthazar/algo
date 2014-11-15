@@ -46,3 +46,11 @@ String algorithms
 * Prefix function
 * Rabin-Carp
 * Suffix array
+
+Numerical algorithms
+==
+
+* Binary search
+* Ternary search
+* Integration
+* Gauss

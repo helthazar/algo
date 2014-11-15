@@ -8,6 +8,19 @@ Data Structures
 * Fenwick tree
 * Treap TODO understand
 
+Graph theory
+==
+* BFS
+* DFS
+* Bridges
+* Cut points
+* Strong connectivity
+* Dijkstra
+* Dijkstra heap
+* Floyd
+* Bellman
+
+
 Max pair matching / Assignment task
 ==
 * Kuhn's algo TODO understand

@@ -1,3 +1,4 @@
+
 const int MAXVAL = 1000000000;
 
 struct Treap {

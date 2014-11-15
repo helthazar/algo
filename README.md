@@ -20,3 +20,17 @@ LCA
 Game Theory
 ==
 * Sprague-Grundy theory
+
+Flows
+== 
+* Dinic algo TODO understand
+* Min cost max flow TODO understand
+
+Number theory
+==
+
+* Binary powering
+* Euler's function
+* Factorisation
+* GCD extended
+* Inverse 

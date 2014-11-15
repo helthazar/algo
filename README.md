@@ -38,3 +38,11 @@ Number theory
 * Gray's code
 * Submasks
 * Garner's algo
+
+String algorithms
+==
+
+* Z-function
+* Prefix function
+* Rabin-Carp
+* Suffix array

@@ -34,3 +34,7 @@ Number theory
 * Factorisation
 * GCD extended
 * Inverse 
+* Eratosphenes sieve
+* Gray's code
+* Submasks
+* Garner's algo

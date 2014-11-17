@@ -1,0 +1,225 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[affil-it]{authblk}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{etoc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\etocsetstyle {subsection}
+{\parfillskip 0pt plus 1fil\relax
+ \nobreak\smallskip}
+{}
+{\mdseries\normalsize\etocnumber~\etocname{} (\etocpage). }
+{\par\medskip}
+
+\newlength\FHoffset
+\setlength\FHoffset{0.8cm}
+
+\fancyheadoffset{\FHoffset}
+
+\lhead{Georg-August~Universität~Göttingen}
+
+%\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.775in}
+%\addtolength{\textwidth}{1.75in}
+\addtolength{\oddsidemargin}{-.775in}
+%\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\begin{document}
+
+\author{The Gaussians at IfI: Bakhodir~Ashirmatov,~Azat~Khuziyakhmetov,~Jerome~Baum}
+\title{\vspace{-8ex}Team reference document}
+\date{\today}
+\affil{\emph{Georg-August~Universität~Göttingen}}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Data structures}
+
+\subsection{Union-find}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/data_structures/union_find.h}
+
+\subsection{Fenwick tree}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/data_structures/fenwick_tree.h}
+
+\subsection{Interval tree}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/data_structures/interval_tree.h}
+
+\section{Graph theory}
+
+\subsection{BFS}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/bfs.cpp}
+
+\subsection{DFS}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/dfs.cpp}
+
+\subsection{Bridges}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/bridges.cpp}
+
+\subsection{Cur points}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/cut_points.cpp}
+
+\subsection{Strong connectivity}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/strong_connectivity.cpp}
+
+\subsection{Dijkstra}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/dijkstra.cpp}
+
+\subsection{Dijkstra heap}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/dijkstra_heap.cpp}
+
+\subsection{Floyd}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/floyd.cpp}
+
+\subsection{Bellman}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/bellman.cpp}
+
+\subsection{Prim}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/prim.cpp}
+
+\subsection{Kruskal}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/graph_theory/kruskal.cpp}
+
+\section{Lowest common ancestor and maximal pair matching}
+
+\subsection{Tarjan's algo}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/lca/tarjan.h}
+
+\subsection{Kuhn's algo}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/max_pair_matching/kuhn.h}
+
+\subsection{Hungarian algo}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/max_pair_matching/hungarian.h}
+
+\section{Game theory}
+
+\subsection{Sprague-Grundy theory}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/game_theory/grundy.h}
+
+\section{Number theory} 
+
+\subsection{Binary powering}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/binpow.cpp}
+
+\subsection{Euler's function}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/euler.cpp}
+
+\subsection{Factorisation}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/factorization.cpp}
+
+\subsection{GCD extended}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/gcdex.cpp}
+
+\subsection{Inverse by modulo}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/inverse_binpow.cpp}
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/inverse_gcdex.cpp}
+
+\subsection{Eratosphenes sieve}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/eratosphenes.cpp}
+
+\subsection{Gray's code}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/gray.cpp}
+
+\subsection{Submasks}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/submask.cpp}
+
+\subsection{Garner's algo}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/number_theory/garner.cpp}
+
+\section{String algorithms}
+
+\subsection{Z-function (number of different substrings)}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/string_algorithms/z_function.h}
+
+\subsection{Prefix function}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/string_algorithms/prefix_function.h}
+
+\subsection{Rabin-Carp}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/string_algorithms/rabin_carp.h}
+
+\subsection{Suffix array}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/string_algorithms/suffix_array.h}
+
+\section{Numerical algorithms}
+
+\subsection{Binary search}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/numerical_algorithms/binary_search.cpp}
+
+\subsection{Ternary search}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/numerical_algorithms/ternary_search.cpp}
+
+\subsection{Newton integration}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/numerical_algorithms/newton_integration.cpp}
+
+\subsection{Gauss algorithm}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C++, breaklines]{../Algo/numerical_algorithms/gauss.cpp}
+
+
+
+\end{document}

@@ -2,42 +2,42 @@ struct line {
     double a, b, c;
 };
 
-void normalize_line(line &l) {
+void line_build(line &l, point p0, point p1) {
+    l.a = p1.y - p0.y;
+    l.b = - (p1.x - p0.x);
+    l.c = p0.y * (p1.x - p0.x) - p0.x * (p1.y - p0.y);
+}
+
+void line_normalize(line &l) {
     double res = sqrt(sqr(l.a) + sqr(l.b));
     l.a /= res;
     l.b /= res;
     l.c /= res;
 }
 
-void build_line(line &l, point p0, point p1) {
-    l.a = p1.y - p0.y;
-    l.b = - (p1.x - p0.x);
-    l.c = p0.y * (p1.x - p0.x) - p0.x * (p1.y - p0.y);
-}
-
-double dis_line(line &l, point p) {
+double line_dis(line l, point p) {
     return fabs(l.a * p.x + l.b * p.y + l.c) / sqrt(l.a * l.a + l.b * l.b);
 }
 
-double det (double a, double b, double c, double d) {
+double det(double a, double b, double c, double d) {
     return a * d - b * c;
 }
 
-bool intersect (line m, line n, point & res) {
-    double zn = det (m.a, m.b, n.a, n.b);
-    if (abs (zn) < eps)
+bool line_intersect(line l1, line l2, point &res) {
+    double d = det(l1.a, l1.b, l2.a, l2.b);
+    if (fabs(d) < eps)
         return false;
-    res.x = - det (m.c, m.b, n.c, n.b) / zn;
-    res.y = - det (m.a, m.c, n.a, n.c) / zn;
+    res.x = - det(l1.c, l1.b, l2.c, l2.b) / d;
+    res.y = - det(l1.a, l1.c, l2.a, l2.c) / d;
     return true;
 }
 
-bool parallel (line m, line n) {
-    return abs (det (m.a, m.b, n.a, n.b)) < eps;
+bool line_check_parallel(line l1, line l2) {
+    return fabs(det(l1.a, l1.b, l2.a, l2.b)) < eps;
 }
 
-bool equivalent (line m, line n) {
-    return abs (det (m.a, m.b, n.a, n.b)) < eps
-    && abs (det (m.a, m.c, n.a, n.c)) < eps
-    && abs (det (m.b, m.c, n.b, n.c)) < eps;
+bool line_check_equivalent(line l1, line l2) {
+    return fabs(det(l1.a, l1.b, l2.a, l2.b)) < eps &&
+            fabs(det(l1.a, l1.c, l2.a, l2.c)) < eps &&
+            fabs(det(l1.b, l1.c, l2.b, l2.c)) < eps;
 }

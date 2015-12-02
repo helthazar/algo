@@ -1,69 +1,59 @@
-Algo
-====
+##Algo
 
-Data Structures
-==
-* Union-find
-* Interval tree
-* Fenwick tree
-* Treap TODO understand
+####Data Structures
+* Union-find (normal + lazy)
+* Fenwick tree (normal + 2D + 3D)
+* Sparse table
+* SQRT-decomposition
+* Interval tree (normal + lazy)
+* Treap (cutpaste + insertmin + insertsum + lazy reverse)
 
-Graph theory
-==
-* BFS
-* DFS
-* Bridges
-* Cut points
-* Strong connectivity
-* Dijkstra
-* Dijkstra heap
-* Floyd
-* Bellman
+####Graph Theory
+* BFS (normal + cc)
+* DFS (normal + cc + directed cycle + ancestor + bridges + cutpoints + scc + 2SAT)
+* SPA (Dijkstra + Dijkstra set + Floyd + Ford-Bellman)
+* MST (Prim + Prim set + Kruskal)
+* LCA (binary lifting + Tarjan + interval tree)
+* Kuhn (max matching + min vertex cover + max independent set)
+* Flows (Dinic + pushflow)
 
+####Dynamic Programming
+* Dynamics on profile
+* Dynamics on subsets
+* Memoization
 
-Max pair matching / Assignment task
-==
-* Kuhn's algo TODO understand
-* Hungarian algo TODO understand
+####String Algorithms
+* Prefix-function (function + find + different substrings + compress + prefix automata)
+* Z-function (function + find + different substrings + compress)
+* Hash-function Rabin-Carp (function + find)
+* Suffix array (normal + lazy + lcp + different substrings + compare)
+* Trie
 
-LCA
-== 
-* Tarjan's algo
-
-Game Theory
-==
-* Sprague-Grundy theory
-
-Flows
-== 
-* Dinic algo TODO understand
-* Min cost max flow TODO understand
-
-Number theory
-==
-
-* Binary powering
-* Euler's function
-* Factorisation
-* GCD extended
-* Inverse 
+####Mathematica
+* Binary powering (normal + matrix)
+* Combinations (binpow + dp)
+* GCD (normal + extended)
+* Inverse (all + binpow + GCD)
+* Factorization (normal + Euler function)
 * Eratosphenes sieve
-* Gray's code
 * Submasks
-* Garner's algo
+* Grey code
+* Chinese remainder theorem
 
-String algorithms
-==
+####Geometry
+* Point (distance + angle + polar angle)
+* Triangle area (signed + area)
+* Lines (build + normalize + distance + intersect + parallel + equivalent)
+* Intervals (distance + intersect)
+* Rays (distance)
+* Polygon (area + convex hull)
+* Two nearest points
 
-* Z-function
-* Prefix function
-* Rabin-Carp
-* Suffix array
-
-Numerical algorithms
-==
-
+####Numerical Algorithms
 * Binary search
 * Ternary search
-* Integration
-* Gauss
+* Simpson integration
+* Gauss (normal + rank mod)
+
+####Game Theory
+* Sprague-Grundy theory

@@ -1,26 +1,16 @@
-bool dfs(int v, int h = 0) {
-    used[v] = 1;
-    p[h] = v;
+const int MAXN = 100001;
+
+vector<int> edges[MAXN];
+int used[MAXN];
+
+void dfs(int v, int comp = 1) {
+    used[v] = comp;
+    
     for (int i = 0; i < edges[v].size(); i++) {
         int next = edges[v][i];
-        if (used[next] == 1) {
-            printf("YES\n");
-            int cur = h;
-            while (p[cur] != next) {
-                cur--;
-            }
-            while (cur <= h) {
-                printf("%d ", p[cur] + 1);
-                cur++;
-            }
-            return false;
-        }
-        else if (used[next] == 0) {
-            if (!dfs(next, h + 1)) {
-                return false;
-            }
+        
+        if (!used[next]) {
+            dfs(next, comp);
         }
     }
-    used[v] = 2;
-    return true;
 }
